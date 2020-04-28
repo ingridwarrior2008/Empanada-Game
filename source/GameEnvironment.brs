@@ -11,7 +11,7 @@ function GameEnvironment(object)
 	object.grassBitmap = invalid
 
 	object.onCreate = function(args)
-		
+
 		m.y = m.game.getCanvas().GetHeight() - 15
 
 		grassBitmap = m.game.getBitmap("grass")

@@ -14,6 +14,16 @@ sub Main()
 	game.loadBitmap("player6", "pkg:/images/sprites/player6.png")
 	game.loadBitmap("player7", "pkg:/images/sprites/player7.png")
 	game.loadBitmap("player8", "pkg:/images/sprites/player8.png")
+
+	game.loadBitmap("enemy0", "pkg:/images/sprites/enemy0.png")
+	game.loadBitmap("enemy1", "pkg:/images/sprites/enemy1.png")
+	game.loadBitmap("enemy2", "pkg:/images/sprites/enemy2.png")
+	game.loadBitmap("enemy3", "pkg:/images/sprites/enemy3.png")
+	game.loadBitmap("enemy4", "pkg:/images/sprites/enemy4.png")
+	game.loadBitmap("enemy5", "pkg:/images/sprites/enemy5.png")
+	game.loadBitmap("enemy6", "pkg:/images/sprites/enemy6.png")
+	game.loadBitmap("enemy7", "pkg:/images/sprites/enemy7.png")
+	game.loadBitmap("enemy8", "pkg:/images/sprites/enemy8.png")
     
 	game.defineRoom("MainRoom", MainRoom)
 	
@@ -27,6 +37,11 @@ sub Main()
 		for i = 0 to constants.pickups.Count()
 			game.defineObject("Pickups" + i.ToStr(), Pickups)
 		end for	
+
+		for i = 0 to constants.enemies.Count() - 1
+			game.defineObject("Enemy" + i.ToStr(), Enemy)
+		end for	
+
 	game.changeRoom("MainRoom")
 	
     game.Play()

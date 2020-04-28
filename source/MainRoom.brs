@@ -20,6 +20,10 @@ function MainRoom(object)
             pickup.y = m.constants.pickups.Lookup("pickup"+ i.ToStr()).y
 		end for	
 
+        for i = 0 to m.constants.enemies.Count() - 1
+			enemy = m.game.createInstance("Enemy" + i.ToStr())
+            enemy.x = m.constants.enemies.Lookup("enemy"+ i.ToStr())
+		end for	
 
     end function
 
@@ -28,8 +32,6 @@ function MainRoom(object)
     end function
 
     object.onDrawBegin = function(canvas)
-        ' canvas.DrawRect(0, 0, 1280, 50, &hFFFFFFFF)
-        ' canvas.DrawRect(0, 720 - 50, 1280, 50, &hFFFFFFFF)
         
         DrawText(canvas, m.constants.title, canvas.GetWidth() / 2, 20, m.game.getFont("default"), "center", &h0000FFFF)
     end function
